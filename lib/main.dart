@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get_navigation/src/root/get_material_app.dart';
+import 'package:hairsalon/splash_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,9 +17,10 @@ class MyApp extends StatelessWidget {
     return ScreenUtilInit(
       designSize: Size(428, 926),
       builder: (context, child) {
-        return MaterialApp(
+        return GetMaterialApp(
           title: 'Flutter Demo',
-          home: const MyHomePage(title: 'Flutter Demo Home Page'),
+          home: SplashScreen(),
+          debugShowCheckedModeBanner: false,
         );
       },
     );
