@@ -17,33 +17,51 @@ class _OnBoardingScreen1State extends State<OnBoardingScreen1> {
     return Scaffold(
       body: Column(
         children: [
-          LiquidSwipe(pages: [
-            Column(
-              children: [
-                Container(
-                  height: height * 1,
-                  width: double.infinity,
-                  decoration: BoxDecoration(
-                      color: Colors.pink,
-                      image: DecorationImage(
-                          image: AssetImage("assets/images/onboarding1.jpg"),
-                          fit: BoxFit.cover)),
+          LiquidSwipe(
+              slideIconWidget: Padding(
+                padding: const EdgeInsets.only(top: 600),
+                child: Icon(
+                  Icons.arrow_back_ios_new,
+                  size: 30,
                 ),
-              ],
-            ),
-            Column(
-              children: [
-                Container(
-                  height: height * 1,
-                  width: double.infinity,
-                  decoration: BoxDecoration(
-                      color: Colors.blue,
-                      image: DecorationImage(
-                          image: AssetImage("assets/images/onboarding1.jpg"))),
+              ),
+              waveType: WaveType.circularReveal,
+              fullTransitionValue: 900,
+              enableSideReveal: true,
+              // enableLoop: true,
+              // ignoreUserGestureWhileAnimating: true,
+              onPageChangeCallback: (activePageIndex) {},
+              positionSlideIcon: 0.03,
+              pages: [
+                Column(
+                  children: [
+                    Container(
+                      height: height * 1,
+                      width: double.infinity,
+                      decoration: BoxDecoration(
+                          color: Colors.pink,
+                          image: DecorationImage(
+                              image:
+                                  AssetImage("assets/images/onboarding1.jpg"),
+                              fit: BoxFit.cover)),
+                    ),
+                  ],
                 ),
-              ],
-            ),
-          ])
+                Column(
+                  children: [
+                    Container(
+                      height: height * 1,
+                      width: double.infinity,
+                      decoration: BoxDecoration(
+                          color: Colors.pink,
+                          image: DecorationImage(
+                              image:
+                                  AssetImage("assets/images/onboarding2.jpg"),
+                              fit: BoxFit.cover)),
+                    ),
+                  ],
+                ),
+              ])
         ],
       ),
     );
