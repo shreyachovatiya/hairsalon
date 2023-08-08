@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
-import 'package:hairsalon/splash_screen.dart';
-
-import 'login_screen.dart';
+import 'package:hairsalon/View/splash_screen.dart';
+import 'View/signin_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -21,7 +20,7 @@ class MyApp extends StatelessWidget {
       builder: (context, child) {
         return GetMaterialApp(
           title: 'Flutter Demo',
-          home: LoginScreen(),
+          home: SplashScreen(),
           debugShowCheckedModeBanner: false,
         );
       },
