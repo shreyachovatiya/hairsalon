@@ -26,6 +26,7 @@ class _OnBoardingScreen1State extends State<OnBoardingScreen1> {
                 child: Icon(
                   Icons.double_arrow_rounded,
                   size: 30,
+                  color: Colors.white,
                 ),
               ),
               waveType: WaveType.liquidReveal,
@@ -35,7 +36,7 @@ class _OnBoardingScreen1State extends State<OnBoardingScreen1> {
               // ignoreUserGestureWhileAnimating: true,
               onPageChangeCallback: (activePageIndex) {
                 if (activePageIndex == 1) {
-                  Get.to(LoginScreen());
+                  Get.to(SigninScreen());
                 }
               },
               positionSlideIcon: 0.8,

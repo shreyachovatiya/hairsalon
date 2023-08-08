@@ -20,11 +20,10 @@ class _CommonTextfieldState extends State<CommonTextfield> {
   @override
   Widget build(BuildContext context) {
     return TextField(
-      maxLines: 1,
       textInputAction: TextInputAction.next,
       controller: widget.controller,
       decoration: InputDecoration(
-        contentPadding: EdgeInsets.symmetric(vertical: 15, horizontal: 10),
+        // contentPadding: EdgeInsets.symmetric(vertical: 15, horizontal: 10),
         prefixIcon: widget.prifixicon,
         enabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(5),
@@ -36,7 +35,7 @@ class _CommonTextfieldState extends State<CommonTextfield> {
         fillColor: Colors.grey.shade200,
         filled: true,
         constraints: BoxConstraints.expand(
-          height: 80.h,
+          height: 70.h,
           width: 388.w,
         ),
       ),

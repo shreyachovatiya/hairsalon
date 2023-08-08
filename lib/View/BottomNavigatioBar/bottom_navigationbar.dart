@@ -9,14 +9,15 @@ import 'package:hairsalon/View/BottomNavigatioBar/service_screen.dart';
 import 'booking_screen.dart';
 import 'home_screen.dart';
 
-class BottomNavigationbar extends StatefulWidget {
-  const BottomNavigationbar({Key? key}) : super(key: key);
+class BottomNavigationbarScreen extends StatefulWidget {
+  const BottomNavigationbarScreen({Key? key}) : super(key: key);
 
   @override
-  State<BottomNavigationbar> createState() => _BottomNavigationbarState();
+  State<BottomNavigationbarScreen> createState() =>
+      _BottomNavigationbarScreenState();
 }
 
-class _BottomNavigationbarState extends State<BottomNavigationbar> {
+class _BottomNavigationbarScreenState extends State<BottomNavigationbarScreen> {
   final _pageController = PageController(initialPage: 0);
 
   /// Controller to handle bottom nav bar and also handles initial page

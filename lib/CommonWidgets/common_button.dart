@@ -24,7 +24,10 @@ class _CommonButtonState extends State<CommonButton> {
       color: Colors.black,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
       elevation: 0,
-      child: widget.text,
+      child: Text(
+        '${widget.text}',
+        style: TextStyle(color: Colors.white),
+      ),
     );
   }
 }

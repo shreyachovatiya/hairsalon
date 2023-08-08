@@ -13,9 +13,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
     return Scaffold(
       backgroundColor: Colors.grey.shade200,
       body: Column(
-        children: [
-          Center(child: Text("Profile Screen")),
-        ],
+        children: [],
       ),
     );
   }
