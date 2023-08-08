@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:hairsalon/View/signin_screen.dart';
 import 'package:liquid_swipe/liquid_swipe.dart';
 
 class OnBoardingScreen1 extends StatefulWidget {
@@ -19,19 +22,23 @@ class _OnBoardingScreen1State extends State<OnBoardingScreen1> {
         children: [
           LiquidSwipe(
               slideIconWidget: Padding(
-                padding: const EdgeInsets.only(top: 600),
+                padding: const EdgeInsets.only(top: 540),
                 child: Icon(
-                  Icons.arrow_back_ios_new,
+                  Icons.double_arrow_rounded,
                   size: 30,
                 ),
               ),
-              waveType: WaveType.circularReveal,
-              fullTransitionValue: 900,
-              enableSideReveal: true,
+              waveType: WaveType.liquidReveal,
+              fullTransitionValue: 880,
+              //enableSideReveal: true,
               // enableLoop: true,
               // ignoreUserGestureWhileAnimating: true,
-              onPageChangeCallback: (activePageIndex) {},
-              positionSlideIcon: 0.03,
+              onPageChangeCallback: (activePageIndex) {
+                if (activePageIndex == 1) {
+                  Get.to(LoginScreen());
+                }
+              },
+              positionSlideIcon: 0.8,
               pages: [
                 Column(
                   children: [
