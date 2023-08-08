@@ -16,6 +16,9 @@ class _LoginScreenState extends State<LoginScreen> {
   TextEditingController passwordcontroller = TextEditingController();
   @override
   Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
+    var height = MediaQuery.of(context).size.height;
+    print(size);
     return Scaffold(
       body: SingleChildScrollView(
         child: Center(
