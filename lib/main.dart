@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:hairsalon/View/splash_screen.dart';
+import 'View/BottomNavigatioBar/bottom_navigationbar.dart';
+import 'View/BottomNavigatioBar/service_screen.dart';
 import 'View/signin_screen.dart';
 
 void main() {
@@ -20,7 +22,7 @@ class MyApp extends StatelessWidget {
       builder: (context, child) {
         return GetMaterialApp(
           title: 'Flutter Demo',
-          home: SplashScreen(),
+          home: BottomNavigationbarScreen(),
           debugShowCheckedModeBanner: false,
         );
       },
