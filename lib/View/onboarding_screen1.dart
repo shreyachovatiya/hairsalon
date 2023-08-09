@@ -61,7 +61,6 @@ class _OnBoardingScreen1State extends State<OnBoardingScreen1> {
                       height: height * 1,
                       width: double.infinity,
                       decoration: BoxDecoration(
-                          color: Colors.pink,
                           image: DecorationImage(
                               image:
                                   AssetImage("assets/images/onboarding2.jpg"),
