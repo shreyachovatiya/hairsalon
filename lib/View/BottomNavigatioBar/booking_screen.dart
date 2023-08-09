@@ -16,12 +16,12 @@ class _BookingScreenState extends State<BookingScreen> {
   int select4 = 0;
 
   List<Map<String, dynamic>> subcategory = [
-    {"simg": "assets/images/", "sname": "Haircut", "sreview": '5.0'},
-    {"simg": "assets/images/", "sname": "Hairspa", "sreview": '4.0'},
-    {"simg": "assets/images/", "sname": "Haircolor", "sreview": '4.5'},
-    {"simg": "assets/images/", "sname": "Hairstyle", "sreview": '3.0'},
-    {"simg": "assets/images/", "sname": "Massage", "sreview": '4.2'},
-    {"simg": "assets/images/", "sname": "Beard", "sreview": '4.7'},
+    {"simg": "assets/images/chair.png", "sname": "Haircut", "sreview": '5.0'},
+    {"simg": "assets/images/chair.png", "sname": "Hairspa", "sreview": '4.0'},
+    {"simg": "assets/images/chair.png", "sname": "Haircolor", "sreview": '4.5'},
+    {"simg": "assets/images/chair.png", "sname": "Hairstyle", "sreview": '3.0'},
+    {"simg": "assets/images/chair.png", "sname": "Massage", "sreview": '4.2'},
+    {"simg": "assets/images/chair.png", "sname": "Beard", "sreview": '4.7'},
   ];
 
   List date = ["24", "25", "26", "27", "28"];
@@ -58,17 +58,25 @@ class _BookingScreenState extends State<BookingScreen> {
                 itemCount: 6,
                 itemBuilder: (context, index) {
                   return Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Container(
-                        margin: EdgeInsets.only(right: 10),
+                        margin: EdgeInsets.only(right: 10, left: 10),
                         height: height * 0.1,
                         width: width * 0.2,
                         decoration: BoxDecoration(
+                          image: DecorationImage(
+                              image:
+                                  AssetImage("${subcategory[index]['simg']}"),
+                              fit: BoxFit.cover),
                           shape: BoxShape.circle,
                           color: Colors.black,
                         ),
                       ),
-                      Text("${subcategory[index]['sname']}"),
+                      Text(
+                        "${subcategory[index]['sname']}",
+                        style: TextStyle(fontSize: height * 0.015),
+                      ),
                       Container(
                         height: height * 0.02,
                         width: width * 0.12,
@@ -78,7 +86,9 @@ class _BookingScreenState extends State<BookingScreen> {
                           children: [
                             Text(
                               "${subcategory[index]['sreview']}",
-                              style: TextStyle(color: Colors.white70),
+                              style: TextStyle(
+                                  color: Colors.white70,
+                                  fontSize: height * 0.015),
                             ),
                             Icon(Icons.star,
                                 color: Colors.white, size: height * 0.02)
@@ -122,18 +132,21 @@ class _BookingScreenState extends State<BookingScreen> {
                             "May",
                             style: TextStyle(
                                 fontWeight: FontWeight.w500,
+                                fontSize: height * 0.015,
                                 color: select == index
                                     ? Colors.white
                                     : Colors.black),
                           ),
                           Text("${date[index]}",
                               style: TextStyle(
+                                  fontSize: height * 0.016,
                                   fontWeight: FontWeight.w500,
                                   color: select == index
                                       ? Colors.white
                                       : Colors.black)),
                           Text("${day[index]}",
                               style: TextStyle(
+                                  fontSize: height * 0.015,
                                   fontWeight: FontWeight.w500,
                                   color: select == index
                                       ? Colors.white
@@ -176,6 +189,7 @@ class _BookingScreenState extends State<BookingScreen> {
                           child: Text(
                         "${mtime[index]}",
                         style: TextStyle(
+                            fontSize: height * 0.015,
                             color:
                                 select1 == index ? Colors.white : Colors.black),
                       )),
@@ -215,6 +229,7 @@ class _BookingScreenState extends State<BookingScreen> {
                           child: Text(
                         "${afternoontime[index]}",
                         style: TextStyle(
+                            fontSize: height * 0.015,
                             color:
                                 select2 == index ? Colors.white : Colors.black),
                       )),
@@ -254,6 +269,7 @@ class _BookingScreenState extends State<BookingScreen> {
                           child: Text(
                         "${eveningtime[index]}",
                         style: TextStyle(
+                            fontSize: height * 0.015,
                             color:
                                 select3 == index ? Colors.white : Colors.black),
                       )),
@@ -293,6 +309,7 @@ class _BookingScreenState extends State<BookingScreen> {
                           child: Text(
                         "${nighttime[index]}",
                         style: TextStyle(
+                            fontSize: height * 0.015,
                             color:
                                 select4 == index ? Colors.white : Colors.black),
                       )),
