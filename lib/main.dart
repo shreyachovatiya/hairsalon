@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:hairsalon/View/splash_screen.dart';
 import 'View/BottomNavigatioBar/bottom_navigationbar.dart';
-import 'View/BottomNavigatioBar/profile_screen.dart';
+import 'View/BottomNavigatioBar/service_screen.dart';
 import 'View/signin_screen.dart';
 
 void main() {
