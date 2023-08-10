@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import 'package:hairsalon/CommonWidgets/common_button.dart';
 
 import '../../CommonWidgets/common_textfield.dart';
@@ -24,20 +26,45 @@ class _EditProfileState extends State<EditProfile> {
     print(size);
     return Scaffold(
       body: Padding(
-        padding: const EdgeInsets.only(left: 20, right: 20, top: 15),
+        padding: const EdgeInsets.only(
+          left: 20,
+          right: 20,
+        ),
         child: SafeArea(
           child: SingleChildScrollView(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Center(
-                  child: Text(
-                    "Edit Profile",
-                    style: TextStyle(
-                        fontSize: height * 0.027, fontWeight: FontWeight.bold),
-                  ),
+                Row(
+                  children: [
+                    Container(
+                      height: height * 0.10,
+                      width: width * 0.10,
+                      decoration: BoxDecoration(
+                          shape: BoxShape.circle, color: Colors.black),
+                      child: Center(
+                        child: IconButton(
+                            onPressed: () {
+                              Get.back();
+                            },
+                            icon: Icon(
+                              Icons.arrow_back_ios_new,
+                              size: height * 0.03,
+                              color: Color(0xffD6A354),
+                            )),
+                      ),
+                    ),
+                    SizedBox(
+                      width: width * 0.20,
+                    ),
+                    Text(
+                      "Edit Profile",
+                      style: TextStyle(
+                          fontSize: height * 0.027,
+                          fontWeight: FontWeight.bold),
+                    ),
+                  ],
                 ),
-                SizedBox(height: height * 0.02),
                 Center(
                   child: CircleAvatar(
                     radius: height * 0.08,

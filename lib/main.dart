@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
       builder: (context, child) {
         return GetMaterialApp(
           title: 'Flutter Demo',
-          home: BottomNavigationbarScreen(),
+          home: SplashScreen(),
           debugShowCheckedModeBanner: false,
         );
       },
