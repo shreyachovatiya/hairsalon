@@ -27,127 +27,124 @@ class _SigninScreenState extends State<SigninScreen> {
     return Scaffold(
       backgroundColor: Colors.grey.shade200,
       body: SingleChildScrollView(
-        child: Center(
-          child: SafeArea(
-            child: Container(
-              height: height,
-              width: width,
-              child: Column(
-                children: [
-                  SizedBox(height: width * 0.10),
-                  Container(
-                    height: 120.h,
-                    width: 120.w,
-                    decoration: BoxDecoration(
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.black26,
-                            offset: Offset(1, 1),
-                            blurRadius: 1,
-                            spreadRadius: 3,
-                          )
-                        ],
-                        shape: BoxShape.circle,
-                        image: DecorationImage(
-                            image: AssetImage("assets/images/logo.jpg"))),
-                  ),
-                  SizedBox(height: width * 0.08),
-                  Text(
-                    "Login",
-                    style: TextStyle(fontSize: 25, fontWeight: FontWeight.w600),
-                  ),
-                  SizedBox(height: width * 0.15),
-                  CommonTextfield(
-                    prifixicon: Icon(Icons.email_outlined, color: Colors.black),
-                    controller: emailcontroller,
-                    hint: "Enter your Email",
-                  ),
-                  SizedBox(height: width * 0.03),
-                  CommonTextfield(
-                    hint: "Enter your Password",
-                    controller: passwordcontroller,
-                    prifixicon:
-                        Icon(Icons.lock_open_outlined, color: Colors.black),
-                  ),
-                  // SizedBox(height: 5.h),
-                  Padding(
-                    padding: const EdgeInsets.only(right: 20, top: 10),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        Text(
-                          "Forgot password?",
-                          style: TextStyle(
-                              fontSize: 13, color: Colors.grey.shade600),
-                        ),
+        child: SafeArea(
+          child: Container(
+            height: height,
+            width: width,
+            child: Column(
+              children: [
+                Container(
+                  height: height * 0.24,
+                  width: width * 0.24,
+                  decoration: BoxDecoration(
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black26,
+                          offset: Offset(1, 1),
+                          blurRadius: 1,
+                          spreadRadius: 3,
+                        )
                       ],
-                    ),
+                      shape: BoxShape.circle,
+                      image: DecorationImage(
+                          image: AssetImage("assets/images/logo.jpg"))),
+                ),
+                SizedBox(height: height * 0.01),
+                Text(
+                  "Login",
+                  style: TextStyle(fontSize: 25, fontWeight: FontWeight.w600),
+                ),
+                SizedBox(height: height * 0.04),
+                CommonTextfield(
+                  prifixicon: Icon(Icons.email_outlined, color: Colors.black),
+                  controller: emailcontroller,
+                  hint: "Enter your Email",
+                ),
+                SizedBox(height: width * 0.03),
+                CommonTextfield(
+                  hint: "Enter your Password",
+                  controller: passwordcontroller,
+                  prifixicon:
+                      Icon(Icons.lock_open_outlined, color: Colors.black),
+                ),
+                // SizedBox(height: 5.h),
+                Padding(
+                  padding: const EdgeInsets.only(right: 20, top: 10),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      Text(
+                        "Forgot password?",
+                        style: TextStyle(
+                            fontSize: 13, color: Colors.grey.shade600),
+                      ),
+                    ],
                   ),
-                  SizedBox(height: height * 0.05),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 20),
-                    child: CommonButton(
-                      onpress: () {
-                        Get.to(BottomNavigationbarScreen());
+                ),
+                SizedBox(height: height * 0.05),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 20),
+                  child: CommonButton(
+                    onpress: () {
+                      Get.to(BottomNavigationbarScreen());
+                    },
+                    height: height * 0.07,
+                    width: double.infinity,
+                    text: 'Login',
+                  ),
+                ),
+                SizedBox(height: width * 0.03),
+                Row(
+                  children: [
+                    Expanded(
+                      child: Divider(
+                        color: Colors.black54,
+                        // height: 3,
+                        thickness: 2,
+                        indent: 20,
+                        endIndent: 20,
+                      ),
+                    ),
+                    Text("Or sign with"),
+                    Expanded(
+                      child: Divider(
+                        color: Colors.black54,
+                        // height: 3,
+                        thickness: 2,
+                        indent: 20,
+                        endIndent: 20,
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(height: width * 0.04),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Image.asset(
+                      'assets/images/googlee.png',
+                      scale: 5,
+                    )
+                  ],
+                ),
+                SizedBox(height: width * 0.04),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text("Don't have an account?"),
+                    SizedBox(width: width * 0.05),
+                    TextButton(
+                      onPressed: () {
+                        Get.to(SignupScreen());
                       },
-                      height: height * 0.07,
-                      width: double.infinity,
-                      text: 'Login',
+                      child: Text(
+                        "Signup",
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      ),
                     ),
-                  ),
-                  SizedBox(height: width * 0.03),
-                  Row(
-                    children: [
-                      Expanded(
-                        child: Divider(
-                          color: Colors.black54,
-                          // height: 3,
-                          thickness: 2,
-                          indent: 20,
-                          endIndent: 20,
-                        ),
-                      ),
-                      Text("Or sign with"),
-                      Expanded(
-                        child: Divider(
-                          color: Colors.black54,
-                          // height: 3,
-                          thickness: 2,
-                          indent: 20,
-                          endIndent: 20,
-                        ),
-                      ),
-                    ],
-                  ),
-                  SizedBox(height: width * 0.04),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Image.asset(
-                        'assets/images/googlee.png',
-                        scale: 5,
-                      )
-                    ],
-                  ),
-                  SizedBox(height: width * 0.04),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text("Don't have an account?"),
-                      SizedBox(width: 5.w),
-                      TextButton(
-                        onPressed: () {
-                          Get.to(SignupScreen());
-                        },
-                        child: Text(
-                          "Signup",
-                          style: TextStyle(fontWeight: FontWeight.bold),
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
+                  ],
+                ),
+              ],
             ),
           ),
         ),
