@@ -64,9 +64,13 @@ class _ServiceScreenState extends State<ServiceScreen>
                         width: width * 0.3,
                         decoration: BoxDecoration(
                           gradient: LinearGradient(
-                              colors: [Colors.orange.shade400, Colors.white],
                               begin: Alignment.topLeft,
-                              end: Alignment.bottomRight),
+                              end: Alignment.bottomRight,
+                              colors: [
+                                Color(0xffD6A354),
+                                Colors.white,
+                                Color(0xffD6A354)
+                              ]),
                           color: change == index
                               ? Colors.yellow.shade800
                               : Colors.white,
@@ -101,70 +105,73 @@ class _ServiceScreenState extends State<ServiceScreen>
       ),
       body: Padding(
         padding: const EdgeInsets.only(right: 15, left: 15),
-        child: Column(
-          children: [
-            Container(
-              height: height * 0.77,
-              width: double.infinity,
-              child: ListView.builder(
-                padding: EdgeInsets.zero,
-                itemCount: 10,
-                itemBuilder: (context, index) {
-                  return Container(
-                    height: height * 0.2,
-                    width: width * 09,
-                    margin: EdgeInsets.only(top: height * 0.01),
-                    decoration: BoxDecoration(
-                        border: Border.all(
-                            color: Colors.black, width: width * 0.01),
-                        borderRadius: BorderRadius.circular(20)),
-                    child: Row(
-                      children: [
-                        SizedBox(
-                          width: width * 0.02,
-                        ),
-                        Container(
-                          height: height * 0.17,
-                          width: width * 0.4,
-                          decoration: BoxDecoration(
-                              image: DecorationImage(
-                                  image: NetworkImage(
-                                      "https://www.fabmood.com/inspiration/wp-content/uploads/2022/05/haircut-2022-32.jpg"),
-                                  fit: BoxFit.cover),
-                              color: Colors.black,
-                              borderRadius: BorderRadius.circular(20)),
-                        ),
-                        SizedBox(
-                          width: width * 0.05,
-                        ),
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text("Hair cut",
-                                style: TextStyle(fontWeight: FontWeight.bold)),
-                            Text("loreal ",
-                                style: TextStyle(color: Colors.grey)),
-                            Row(
-                              children: [
-                                Text("Price : ",
-                                    style:
-                                        TextStyle(fontWeight: FontWeight.bold)),
-                                SizedBox(
-                                  width: width * 0.02,
-                                ),
-                                Text("₹ 500.00")
-                              ],
-                            ),
-                          ],
-                        )
-                      ],
-                    ),
-                  );
-                },
-              ),
-            )
-          ],
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              Container(
+                height: height * 0.77,
+                width: double.infinity,
+                child: ListView.builder(
+                  padding: EdgeInsets.zero,
+                  itemCount: 10,
+                  itemBuilder: (context, index) {
+                    return Container(
+                      height: height * 0.2,
+                      width: width * 09,
+                      margin: EdgeInsets.only(top: height * 0.01),
+                      decoration: BoxDecoration(
+                          border: Border.all(
+                              color: Colors.black, width: width * 0.01),
+                          borderRadius: BorderRadius.circular(20)),
+                      child: Row(
+                        children: [
+                          SizedBox(
+                            width: width * 0.02,
+                          ),
+                          Container(
+                            height: height * 0.17,
+                            width: width * 0.4,
+                            decoration: BoxDecoration(
+                                image: DecorationImage(
+                                    image: NetworkImage(
+                                        "https://www.fabmood.com/inspiration/wp-content/uploads/2022/05/haircut-2022-32.jpg"),
+                                    fit: BoxFit.cover),
+                                color: Colors.black,
+                                borderRadius: BorderRadius.circular(20)),
+                          ),
+                          SizedBox(
+                            width: width * 0.05,
+                          ),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text("Hair cut",
+                                  style:
+                                      TextStyle(fontWeight: FontWeight.bold)),
+                              Text("loreal ",
+                                  style: TextStyle(color: Colors.grey)),
+                              Row(
+                                children: [
+                                  Text("Price : ",
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.bold)),
+                                  SizedBox(
+                                    width: width * 0.02,
+                                  ),
+                                  Text("₹ 500.00")
+                                ],
+                              ),
+                            ],
+                          )
+                        ],
+                      ),
+                    );
+                  },
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );
