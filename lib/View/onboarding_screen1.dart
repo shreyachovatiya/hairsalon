@@ -18,57 +18,59 @@ class _OnBoardingScreen1State extends State<OnBoardingScreen1> {
     var height = MediaQuery.of(context).size.height;
     print(size);
     return Scaffold(
-      body: Column(
-        children: [
-          LiquidSwipe(
-              slideIconWidget: Padding(
-                padding: const EdgeInsets.only(top: 540),
-                child: Icon(
-                  Icons.double_arrow_rounded,
-                  size: 30,
-                  color: Colors.white,
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            LiquidSwipe(
+                slideIconWidget: Padding(
+                  padding: const EdgeInsets.only(top: 540),
+                  child: Icon(
+                    Icons.double_arrow_rounded,
+                    size: 30,
+                    color: Colors.white,
+                  ),
                 ),
-              ),
-              waveType: WaveType.liquidReveal,
-              fullTransitionValue: 880,
-              //enableSideReveal: true,
-              // enableLoop: true,
-              // ignoreUserGestureWhileAnimating: true,
-              onPageChangeCallback: (activePageIndex) {
-                if (activePageIndex == 1) {
-                  Get.to(SigninScreen());
-                }
-              },
-              positionSlideIcon: 0.8,
-              pages: [
-                Column(
-                  children: [
-                    Container(
-                      height: height * 1,
-                      width: double.infinity,
-                      decoration: BoxDecoration(
-                          image: DecorationImage(
-                              image:
-                                  AssetImage("assets/images/onboarding1.jpg"),
-                              fit: BoxFit.cover)),
-                    ),
-                  ],
-                ),
-                Column(
-                  children: [
-                    Container(
-                      height: height * 1,
-                      width: double.infinity,
-                      decoration: BoxDecoration(
-                          image: DecorationImage(
-                              image:
-                                  AssetImage("assets/images/onboarding2.jpg"),
-                              fit: BoxFit.cover)),
-                    ),
-                  ],
-                ),
-              ])
-        ],
+                waveType: WaveType.liquidReveal,
+                fullTransitionValue: 880,
+                //enableSideReveal: true,
+                // enableLoop: true,
+                // ignoreUserGestureWhileAnimating: true,
+                onPageChangeCallback: (activePageIndex) {
+                  if (activePageIndex == 1) {
+                    Get.to(SigninScreen());
+                  }
+                },
+                positionSlideIcon: 0.8,
+                pages: [
+                  Column(
+                    children: [
+                      Container(
+                        height: height,
+                        width: double.infinity,
+                        decoration: BoxDecoration(
+                            image: DecorationImage(
+                                image:
+                                    AssetImage("assets/images/onboarding1.jpg"),
+                                fit: BoxFit.cover)),
+                      ),
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      Container(
+                        height: height,
+                        width: double.infinity,
+                        decoration: BoxDecoration(
+                            image: DecorationImage(
+                                image:
+                                    AssetImage("assets/images/onboarding2.jpg"),
+                                fit: BoxFit.cover)),
+                      ),
+                    ],
+                  ),
+                ])
+          ],
+        ),
       ),
     );
   }
